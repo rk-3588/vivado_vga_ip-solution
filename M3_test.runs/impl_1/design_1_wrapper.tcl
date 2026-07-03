@@ -60,6 +60,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 
@@ -68,24 +69,24 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
-  set_param synth.incrementalSynthesisCache C:/Users/asus/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22172-LAPTOP-A50L20VJ/incrSyn
+  set_param synth.incrementalSynthesisCache F:/vivado_project/M3_t/M3_test/.Xil/Vivado-12780-LAPTOP-A50L20VJ/incrSyn
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir F:/vivado_project/M3_test/M3_test.cache/wt [current_project]
-  set_property parent.project_path F:/vivado_project/M3_test/M3_test.xpr [current_project]
+  set_property webtalk.parent_dir F:/vivado_project/M3_t/M3_test/M3_test.cache/wt [current_project]
+  set_property parent.project_path F:/vivado_project/M3_t/M3_test/M3_test.xpr [current_project]
   set_property ip_repo_paths F:/vivado_project/AT426-r0p1-00rel0-1/AT426-BU-98000-r0p1-00rel0/vivado/Arm_ipi_repository [current_project]
   update_ip_catalog
-  set_property ip_output_repo F:/vivado_project/M3_test/M3_test.cache/ip [current_project]
+  set_property ip_output_repo F:/vivado_project/M3_t/M3_test/M3_test.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet F:/vivado_project/M3_test/M3_test.runs/synth_1/design_1_wrapper.dcp
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
+  add_files -quiet F:/vivado_project/M3_t/M3_test/M3_test.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files F:/vivado_project/M3_test/M3_test.srcs/sources_1/bd/design_1/design_1.bd
+  add_files F:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
-  read_xdc F:/vivado_project/M3_test/M3_test.srcs/constrs_1/new/test.xdc
+  read_xdc F:/vivado_project/M3_t/M3_test/M3_test.srcs/constrs_1/new/test.xdc
   set_param project.isImplRun true
   link_design -top design_1_wrapper -part xc7a100tcsg324-1
   set_param project.isImplRun false
@@ -184,7 +185,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force design_1_wrapper.mmi }
   write_bitstream -force design_1_wrapper.bit 
   catch {write_debug_probes -quiet -force design_1_wrapper}

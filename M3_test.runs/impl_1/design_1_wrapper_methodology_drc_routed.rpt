@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Jun 30 09:41:01 2026
+| Date         : Fri Jul  3 15:50:30 2026
 | Host         : LAPTOP-A50L20VJ running 64-bit major release  (build 9200)
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -23,13 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 216
-+-----------+------------------+------------------------------+------------+
-| Rule      | Severity         | Description                  | Violations |
-+-----------+------------------+------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 214        |
-| LUTAR-1   | Warning          | LUT drives async reset alert | 2          |
-+-----------+------------------+------------------------------+------------+
+             Violations found: 217
++-----------+------------------+-------------------------------+------------+
+| Rule      | Severity         | Description                   | Violations |
++-----------+------------------+-------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 214        |
+| LUTAR-1   | Warning          | LUT drives async reset alert  | 2          |
+| TIMING-18 | Warning          | Missing input or output delay | 1          |
++-----------+------------------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -1111,6 +1112,11 @@ Related violations: <none>
 LUTAR-1#2 Warning
 LUT drives async reset alert  
 LUT cell design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_nvic/u_cm3_nvic_reg/dbg_restarted_reg_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ctl/FSM_sequential_state_reg[0]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ctl/FSM_sequential_state_reg[1]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ctl/allow_pc_write_reg/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ctl/FSM_sequential_state_reg[2]/PRE, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ctl/FSM_sequential_state_reg[3]/PRE, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/ahb_htransi_issued_fe_reg/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[0]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[10]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[11]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[12]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[13]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[14]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[15]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[16]/CLR, design_1_i/CORTEXM3_AXI_0/inst/u_CORTEXM3INTEGRATION/uCORTEXM3/u_cm3_dpu/u_cm3_dpu_fetch/u_cm3_dpu_fetch_ahbintf/fe_address_reg[17]/CLR (the first 15 of 797 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on ext_reset_in_0 relative to clock(s) clk_in1_0
 Related violations: <none>
 
 
