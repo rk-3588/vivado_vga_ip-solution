@@ -8,5 +8,6 @@
 ################################################################################
 create_clock -name clk_in1_0 -period 10 [get_ports clk_in1_0]
 create_clock -name SWCLKTCK_0 -period 10 [get_ports SWCLKTCK_0]
+create_clock -name pclk_0 -period 10 [get_ports pclk_0]
 
 ################################################################################

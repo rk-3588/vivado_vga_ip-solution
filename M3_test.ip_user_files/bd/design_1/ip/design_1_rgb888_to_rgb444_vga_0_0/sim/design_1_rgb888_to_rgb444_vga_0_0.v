@@ -89,7 +89,10 @@ output wire [3 : 0] vga_b;
 output wire vga_hsync;
 output wire vga_vsync;
 
-  rgb888_to_rgb444_vga inst (
+  rgb888_to_rgb444_vga #(
+    .HSYNC_ACTIVE_LOW(1),
+    .VSYNC_ACTIVE_LOW(1)
+  ) inst (
     .vid_active_video(vid_active_video),
     .vid_data(vid_data),
     .vid_field(vid_field),
