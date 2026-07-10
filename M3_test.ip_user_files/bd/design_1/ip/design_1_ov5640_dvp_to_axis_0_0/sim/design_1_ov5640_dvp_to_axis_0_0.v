@@ -101,9 +101,11 @@ output wire probe_overflow;
   ov5640_dvp_to_axis #(
     .H_ACTIVE(640),
     .V_ACTIVE(480),
+    .FIFO_ADDR_WIDTH(12),
     .VSYNC_ACTIVE_HIGH(1'B1),
     .HREF_ACTIVE_HIGH(1'B1),
-    .RGB565_BYTE_ORDER(1'B0)
+    .RGB565_BYTE_ORDER(1'B0),
+    .SWAP_RB(1'B0)
   ) inst (
     .pclk(pclk),
     .rstn(rstn),

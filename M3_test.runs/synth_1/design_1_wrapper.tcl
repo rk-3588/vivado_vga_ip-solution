@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -31,7 +29,10 @@ set_property parent.project_path F:/vivado_project/M3_t/M3_test/M3_test.xpr [cur
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths f:/vivado_project/AT426-r0p1-00rel0-1/AT426-BU-98000-r0p1-00rel0/vivado/Arm_ipi_repository [current_project]
+set_property ip_repo_paths {
+  f:/vivado_project/AT426-r0p1-00rel0-1/AT426-BU-98000-r0p1-00rel0/vivado/Arm_ipi_repository
+  f:/vivado_project/M3_t/xilinx_com_hls_skin_process_accel_1_0
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo f:/vivado_project/M3_t/M3_test/M3_test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -40,6 +41,7 @@ read_verilog -library xil_defaultlib {
   F:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/new/axis_colorbar.v
   F:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/new/rgb888_to_rgb444_vga.v
   F:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/new/ov5640_dvp_to_axis.v
+  F:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/new/vid_result_overlay.v
   F:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
 }
 add_files F:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/design_1.bd
@@ -90,12 +92,15 @@ set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_28/bd_48ac_sawn_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_29/bd_48ac_swn_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_30/bd_48ac_sbn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_31/bd_48ac_m00s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_32/bd_48ac_m00arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_33/bd_48ac_m00rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_34/bd_48ac_m00awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_35/bd_48ac_m00wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_36/bd_48ac_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_34/bd_48ac_s03a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_35/bd_48ac_sarn_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_36/bd_48ac_srn_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_37/bd_48ac_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_38/bd_48ac_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_39/bd_48ac_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_40/bd_48ac_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_41/bd_48ac_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_42/bd_48ac_m00bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_3_0/design_1_proc_sys_reset_3_0_board.xdc]
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_3_0/design_1_proc_sys_reset_3_0.xdc]
@@ -108,6 +113,19 @@ set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_board.xdc]
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_vdma_1_0/design_1_axi_vdma_1_0.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_vdma_1_0/design_1_axi_vdma_1_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_vdma_1_0/design_1_axi_vdma_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_skin_process_accel_0_0/constraints/skin_process_accel_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0_board.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_3_0/design_1_axi_gpio_3_0_board.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_3_0/design_1_axi_gpio_3_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_3_0/design_1_axi_gpio_3_0.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_4_0/design_1_axi_gpio_4_0_board.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_4_0/design_1_axi_gpio_4_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_4_0/design_1_axi_gpio_4_0.xdc]
 set_property used_in_implementation false [get_files -all f:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all F:/vivado_project/M3_t/M3_test/M3_test.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 

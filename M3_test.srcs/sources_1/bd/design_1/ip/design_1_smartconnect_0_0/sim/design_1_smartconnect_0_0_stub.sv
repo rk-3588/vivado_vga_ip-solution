@@ -119,6 +119,21 @@ module design_1_smartconnect_0_0 (
   output bit [1 : 0] S02_AXI_bresp,
   output bit_as_bool S02_AXI_bvalid,
   input bit_as_bool S02_AXI_bready,
+  input bit [31 : 0] S03_AXI_araddr,
+  input bit [7 : 0] S03_AXI_arlen,
+  input bit [2 : 0] S03_AXI_arsize,
+  input bit [1 : 0] S03_AXI_arburst,
+  input bit [0 : 0] S03_AXI_arlock,
+  input bit [3 : 0] S03_AXI_arcache,
+  input bit [2 : 0] S03_AXI_arprot,
+  input bit [3 : 0] S03_AXI_arqos,
+  input bit_as_bool S03_AXI_arvalid,
+  output bit_as_bool S03_AXI_arready,
+  output bit [127 : 0] S03_AXI_rdata,
+  output bit [1 : 0] S03_AXI_rresp,
+  output bit_as_bool S03_AXI_rlast,
+  output bit_as_bool S03_AXI_rvalid,
+  input bit_as_bool S03_AXI_rready,
   output bit [26 : 0] M00_AXI_awaddr,
   output bit [7 : 0] M00_AXI_awlen,
   output bit [2 : 0] M00_AXI_awsize,
@@ -158,7 +173,7 @@ endmodule
 
 `ifdef XCELIUM
 (* XMSC_MODULE_EXPORT *)
-module design_1_smartconnect_0_0 (aclk,aclk1,aresetn,S00_AXI_araddr,S00_AXI_arlen,S00_AXI_arsize,S00_AXI_arburst,S00_AXI_arlock,S00_AXI_arcache,S00_AXI_arprot,S00_AXI_arqos,S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rdata,S00_AXI_rresp,S00_AXI_rlast,S00_AXI_rvalid,S00_AXI_rready,S01_AXI_awaddr,S01_AXI_awprot,S01_AXI_awvalid,S01_AXI_awready,S01_AXI_wdata,S01_AXI_wstrb,S01_AXI_wvalid,S01_AXI_wready,S01_AXI_bresp,S01_AXI_bvalid,S01_AXI_bready,S01_AXI_araddr,S01_AXI_arprot,S01_AXI_arvalid,S01_AXI_arready,S01_AXI_rdata,S01_AXI_rresp,S01_AXI_rvalid,S01_AXI_rready,S02_AXI_awaddr,S02_AXI_awlen,S02_AXI_awsize,S02_AXI_awburst,S02_AXI_awlock,S02_AXI_awcache,S02_AXI_awprot,S02_AXI_awqos,S02_AXI_awvalid,S02_AXI_awready,S02_AXI_wdata,S02_AXI_wstrb,S02_AXI_wlast,S02_AXI_wvalid,S02_AXI_wready,S02_AXI_bresp,S02_AXI_bvalid,S02_AXI_bready,M00_AXI_awaddr,M00_AXI_awlen,M00_AXI_awsize,M00_AXI_awburst,M00_AXI_awlock,M00_AXI_awcache,M00_AXI_awprot,M00_AXI_awqos,M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata,M00_AXI_wstrb,M00_AXI_wlast,M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp,M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr,M00_AXI_arlen,M00_AXI_arsize,M00_AXI_arburst,M00_AXI_arlock,M00_AXI_arcache,M00_AXI_arprot,M00_AXI_arqos,M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata,M00_AXI_rresp,M00_AXI_rlast,M00_AXI_rvalid,M00_AXI_rready)
+module design_1_smartconnect_0_0 (aclk,aclk1,aresetn,S00_AXI_araddr,S00_AXI_arlen,S00_AXI_arsize,S00_AXI_arburst,S00_AXI_arlock,S00_AXI_arcache,S00_AXI_arprot,S00_AXI_arqos,S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rdata,S00_AXI_rresp,S00_AXI_rlast,S00_AXI_rvalid,S00_AXI_rready,S01_AXI_awaddr,S01_AXI_awprot,S01_AXI_awvalid,S01_AXI_awready,S01_AXI_wdata,S01_AXI_wstrb,S01_AXI_wvalid,S01_AXI_wready,S01_AXI_bresp,S01_AXI_bvalid,S01_AXI_bready,S01_AXI_araddr,S01_AXI_arprot,S01_AXI_arvalid,S01_AXI_arready,S01_AXI_rdata,S01_AXI_rresp,S01_AXI_rvalid,S01_AXI_rready,S02_AXI_awaddr,S02_AXI_awlen,S02_AXI_awsize,S02_AXI_awburst,S02_AXI_awlock,S02_AXI_awcache,S02_AXI_awprot,S02_AXI_awqos,S02_AXI_awvalid,S02_AXI_awready,S02_AXI_wdata,S02_AXI_wstrb,S02_AXI_wlast,S02_AXI_wvalid,S02_AXI_wready,S02_AXI_bresp,S02_AXI_bvalid,S02_AXI_bready,S03_AXI_araddr,S03_AXI_arlen,S03_AXI_arsize,S03_AXI_arburst,S03_AXI_arlock,S03_AXI_arcache,S03_AXI_arprot,S03_AXI_arqos,S03_AXI_arvalid,S03_AXI_arready,S03_AXI_rdata,S03_AXI_rresp,S03_AXI_rlast,S03_AXI_rvalid,S03_AXI_rready,M00_AXI_awaddr,M00_AXI_awlen,M00_AXI_awsize,M00_AXI_awburst,M00_AXI_awlock,M00_AXI_awcache,M00_AXI_awprot,M00_AXI_awqos,M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata,M00_AXI_wstrb,M00_AXI_wlast,M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp,M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr,M00_AXI_arlen,M00_AXI_arsize,M00_AXI_arburst,M00_AXI_arlock,M00_AXI_arcache,M00_AXI_arprot,M00_AXI_arqos,M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata,M00_AXI_rresp,M00_AXI_rlast,M00_AXI_rvalid,M00_AXI_rready)
 (* integer foreign = "SystemC";
 *);
   input bit aclk;
@@ -216,6 +231,21 @@ module design_1_smartconnect_0_0 (aclk,aclk1,aresetn,S00_AXI_araddr,S00_AXI_arle
   output wire [1 : 0] S02_AXI_bresp;
   output wire S02_AXI_bvalid;
   input bit S02_AXI_bready;
+  input bit [31 : 0] S03_AXI_araddr;
+  input bit [7 : 0] S03_AXI_arlen;
+  input bit [2 : 0] S03_AXI_arsize;
+  input bit [1 : 0] S03_AXI_arburst;
+  input bit [0 : 0] S03_AXI_arlock;
+  input bit [3 : 0] S03_AXI_arcache;
+  input bit [2 : 0] S03_AXI_arprot;
+  input bit [3 : 0] S03_AXI_arqos;
+  input bit S03_AXI_arvalid;
+  output wire S03_AXI_arready;
+  output wire [127 : 0] S03_AXI_rdata;
+  output wire [1 : 0] S03_AXI_rresp;
+  output wire S03_AXI_rlast;
+  output wire S03_AXI_rvalid;
+  input bit S03_AXI_rready;
   output wire [26 : 0] M00_AXI_awaddr;
   output wire [7 : 0] M00_AXI_awlen;
   output wire [2 : 0] M00_AXI_awsize;
@@ -254,7 +284,7 @@ endmodule
 
 `ifdef RIVIERA
 (* SC_MODULE_EXPORT *)
-module design_1_smartconnect_0_0 (aclk,aclk1,aresetn,S00_AXI_araddr,S00_AXI_arlen,S00_AXI_arsize,S00_AXI_arburst,S00_AXI_arlock,S00_AXI_arcache,S00_AXI_arprot,S00_AXI_arqos,S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rdata,S00_AXI_rresp,S00_AXI_rlast,S00_AXI_rvalid,S00_AXI_rready,S01_AXI_awaddr,S01_AXI_awprot,S01_AXI_awvalid,S01_AXI_awready,S01_AXI_wdata,S01_AXI_wstrb,S01_AXI_wvalid,S01_AXI_wready,S01_AXI_bresp,S01_AXI_bvalid,S01_AXI_bready,S01_AXI_araddr,S01_AXI_arprot,S01_AXI_arvalid,S01_AXI_arready,S01_AXI_rdata,S01_AXI_rresp,S01_AXI_rvalid,S01_AXI_rready,S02_AXI_awaddr,S02_AXI_awlen,S02_AXI_awsize,S02_AXI_awburst,S02_AXI_awlock,S02_AXI_awcache,S02_AXI_awprot,S02_AXI_awqos,S02_AXI_awvalid,S02_AXI_awready,S02_AXI_wdata,S02_AXI_wstrb,S02_AXI_wlast,S02_AXI_wvalid,S02_AXI_wready,S02_AXI_bresp,S02_AXI_bvalid,S02_AXI_bready,M00_AXI_awaddr,M00_AXI_awlen,M00_AXI_awsize,M00_AXI_awburst,M00_AXI_awlock,M00_AXI_awcache,M00_AXI_awprot,M00_AXI_awqos,M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata,M00_AXI_wstrb,M00_AXI_wlast,M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp,M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr,M00_AXI_arlen,M00_AXI_arsize,M00_AXI_arburst,M00_AXI_arlock,M00_AXI_arcache,M00_AXI_arprot,M00_AXI_arqos,M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata,M00_AXI_rresp,M00_AXI_rlast,M00_AXI_rvalid,M00_AXI_rready)
+module design_1_smartconnect_0_0 (aclk,aclk1,aresetn,S00_AXI_araddr,S00_AXI_arlen,S00_AXI_arsize,S00_AXI_arburst,S00_AXI_arlock,S00_AXI_arcache,S00_AXI_arprot,S00_AXI_arqos,S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rdata,S00_AXI_rresp,S00_AXI_rlast,S00_AXI_rvalid,S00_AXI_rready,S01_AXI_awaddr,S01_AXI_awprot,S01_AXI_awvalid,S01_AXI_awready,S01_AXI_wdata,S01_AXI_wstrb,S01_AXI_wvalid,S01_AXI_wready,S01_AXI_bresp,S01_AXI_bvalid,S01_AXI_bready,S01_AXI_araddr,S01_AXI_arprot,S01_AXI_arvalid,S01_AXI_arready,S01_AXI_rdata,S01_AXI_rresp,S01_AXI_rvalid,S01_AXI_rready,S02_AXI_awaddr,S02_AXI_awlen,S02_AXI_awsize,S02_AXI_awburst,S02_AXI_awlock,S02_AXI_awcache,S02_AXI_awprot,S02_AXI_awqos,S02_AXI_awvalid,S02_AXI_awready,S02_AXI_wdata,S02_AXI_wstrb,S02_AXI_wlast,S02_AXI_wvalid,S02_AXI_wready,S02_AXI_bresp,S02_AXI_bvalid,S02_AXI_bready,S03_AXI_araddr,S03_AXI_arlen,S03_AXI_arsize,S03_AXI_arburst,S03_AXI_arlock,S03_AXI_arcache,S03_AXI_arprot,S03_AXI_arqos,S03_AXI_arvalid,S03_AXI_arready,S03_AXI_rdata,S03_AXI_rresp,S03_AXI_rlast,S03_AXI_rvalid,S03_AXI_rready,M00_AXI_awaddr,M00_AXI_awlen,M00_AXI_awsize,M00_AXI_awburst,M00_AXI_awlock,M00_AXI_awcache,M00_AXI_awprot,M00_AXI_awqos,M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata,M00_AXI_wstrb,M00_AXI_wlast,M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp,M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr,M00_AXI_arlen,M00_AXI_arsize,M00_AXI_arburst,M00_AXI_arlock,M00_AXI_arcache,M00_AXI_arprot,M00_AXI_arqos,M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata,M00_AXI_rresp,M00_AXI_rlast,M00_AXI_rvalid,M00_AXI_rready)
   input bit aclk;
   input bit aclk1;
   input bit aresetn;
@@ -310,6 +340,21 @@ module design_1_smartconnect_0_0 (aclk,aclk1,aresetn,S00_AXI_araddr,S00_AXI_arle
   output wire [1 : 0] S02_AXI_bresp;
   output wire S02_AXI_bvalid;
   input bit S02_AXI_bready;
+  input bit [31 : 0] S03_AXI_araddr;
+  input bit [7 : 0] S03_AXI_arlen;
+  input bit [2 : 0] S03_AXI_arsize;
+  input bit [1 : 0] S03_AXI_arburst;
+  input bit [0 : 0] S03_AXI_arlock;
+  input bit [3 : 0] S03_AXI_arcache;
+  input bit [2 : 0] S03_AXI_arprot;
+  input bit [3 : 0] S03_AXI_arqos;
+  input bit S03_AXI_arvalid;
+  output wire S03_AXI_arready;
+  output wire [127 : 0] S03_AXI_rdata;
+  output wire [1 : 0] S03_AXI_rresp;
+  output wire S03_AXI_rlast;
+  output wire S03_AXI_rvalid;
+  input bit S03_AXI_rready;
   output wire [26 : 0] M00_AXI_awaddr;
   output wire [7 : 0] M00_AXI_awlen;
   output wire [2 : 0] M00_AXI_awsize;

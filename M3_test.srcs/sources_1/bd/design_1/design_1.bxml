@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1783349938"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1783349938"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1783349938"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1783349938"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1783678000"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1783678000"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1783678000"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1783678000"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_CORTEXM3_AXI_0_0\design_1_CORTEXM3_AXI_0_0.xci" Type="IP">
         <Instance HierarchyPath="CORTEXM3_AXI_0"/>
@@ -225,6 +225,62 @@
       </File>
       <File Name="ip\design_1_xlconstant_3_0\design_1_xlconstant_3_0.xci" Type="IP">
         <Instance HierarchyPath="xlconstant_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_axi_vdma_1_0\design_1_axi_vdma_1_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_vdma_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_skin_process_accel_0_0\design_1_skin_process_accel_0_0.xci" Type="IP">
+        <Instance HierarchyPath="skin_process_accel_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_vid_result_overlay_0_0\design_1_vid_result_overlay_0_0.xci" Type="IP">
+        <Instance HierarchyPath="vid_result_overlay_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_axi_gpio_2_0\design_1_axi_gpio_2_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_xlconstant_4_0\design_1_xlconstant_4_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconstant_4"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_axi_gpio_3_0\design_1_axi_gpio_3_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_axi_gpio_4_0\design_1_axi_gpio_4_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_4"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

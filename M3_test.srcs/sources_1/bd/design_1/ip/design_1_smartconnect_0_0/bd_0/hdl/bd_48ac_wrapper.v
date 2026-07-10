@@ -92,6 +92,21 @@ module bd_48ac_wrapper
     S02_AXI_wready,
     S02_AXI_wstrb,
     S02_AXI_wvalid,
+    S03_AXI_araddr,
+    S03_AXI_arburst,
+    S03_AXI_arcache,
+    S03_AXI_arlen,
+    S03_AXI_arlock,
+    S03_AXI_arprot,
+    S03_AXI_arqos,
+    S03_AXI_arready,
+    S03_AXI_arsize,
+    S03_AXI_arvalid,
+    S03_AXI_rdata,
+    S03_AXI_rlast,
+    S03_AXI_rready,
+    S03_AXI_rresp,
+    S03_AXI_rvalid,
     aclk,
     aclk1,
     aresetn);
@@ -180,6 +195,21 @@ module bd_48ac_wrapper
   output S02_AXI_wready;
   input [15:0]S02_AXI_wstrb;
   input S02_AXI_wvalid;
+  input [31:0]S03_AXI_araddr;
+  input [1:0]S03_AXI_arburst;
+  input [3:0]S03_AXI_arcache;
+  input [7:0]S03_AXI_arlen;
+  input [0:0]S03_AXI_arlock;
+  input [2:0]S03_AXI_arprot;
+  input [3:0]S03_AXI_arqos;
+  output S03_AXI_arready;
+  input [2:0]S03_AXI_arsize;
+  input S03_AXI_arvalid;
+  output [127:0]S03_AXI_rdata;
+  output S03_AXI_rlast;
+  input S03_AXI_rready;
+  output [1:0]S03_AXI_rresp;
+  output S03_AXI_rvalid;
   input aclk;
   input aclk1;
   input aresetn;
@@ -269,6 +299,21 @@ module bd_48ac_wrapper
   wire S02_AXI_wready;
   wire [15:0]S02_AXI_wstrb;
   wire S02_AXI_wvalid;
+  wire [31:0]S03_AXI_araddr;
+  wire [1:0]S03_AXI_arburst;
+  wire [3:0]S03_AXI_arcache;
+  wire [7:0]S03_AXI_arlen;
+  wire [0:0]S03_AXI_arlock;
+  wire [2:0]S03_AXI_arprot;
+  wire [3:0]S03_AXI_arqos;
+  wire S03_AXI_arready;
+  wire [2:0]S03_AXI_arsize;
+  wire S03_AXI_arvalid;
+  wire [127:0]S03_AXI_rdata;
+  wire S03_AXI_rlast;
+  wire S03_AXI_rready;
+  wire [1:0]S03_AXI_rresp;
+  wire S03_AXI_rvalid;
   wire aclk;
   wire aclk1;
   wire aresetn;
@@ -359,6 +404,21 @@ module bd_48ac_wrapper
         .S02_AXI_wready(S02_AXI_wready),
         .S02_AXI_wstrb(S02_AXI_wstrb),
         .S02_AXI_wvalid(S02_AXI_wvalid),
+        .S03_AXI_araddr(S03_AXI_araddr),
+        .S03_AXI_arburst(S03_AXI_arburst),
+        .S03_AXI_arcache(S03_AXI_arcache),
+        .S03_AXI_arlen(S03_AXI_arlen),
+        .S03_AXI_arlock(S03_AXI_arlock),
+        .S03_AXI_arprot(S03_AXI_arprot),
+        .S03_AXI_arqos(S03_AXI_arqos),
+        .S03_AXI_arready(S03_AXI_arready),
+        .S03_AXI_arsize(S03_AXI_arsize),
+        .S03_AXI_arvalid(S03_AXI_arvalid),
+        .S03_AXI_rdata(S03_AXI_rdata),
+        .S03_AXI_rlast(S03_AXI_rlast),
+        .S03_AXI_rready(S03_AXI_rready),
+        .S03_AXI_rresp(S03_AXI_rresp),
+        .S03_AXI_rvalid(S03_AXI_rvalid),
         .aclk(aclk),
         .aclk1(aclk1),
         .aresetn(aresetn));

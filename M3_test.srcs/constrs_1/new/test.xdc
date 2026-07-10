@@ -13,6 +13,10 @@ set_property PACKAGE_PIN E3 [get_ports clk_in1_0]
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets -of_objects [get_ports SWCLKTCK_0]]
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets -of_objects [get_ports pclk_0]]
 
+# AXI GPIO control/status values are sampled by the VGA pixel clock in vid_result_overlay.
+# The first synchronizer stage is intentionally asynchronous.
+set_false_path -to [get_pins -hier -regexp {.*vid_result_overlay_0/inst/ctrl_meta_reg(\[[0-9]+\])?/D}]
+
 set_property IOSTANDARD LVCMOS33 [get_ports rx_0]
 set_property IOSTANDARD LVCMOS33 [get_ports tx_0]
 set_property PACKAGE_PIN H14 [get_ports rx_0]

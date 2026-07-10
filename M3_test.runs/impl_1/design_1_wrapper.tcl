@@ -67,13 +67,15 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir F:/vivado_project/M3_t/M3_test/M3_test.cache/wt [current_project]
   set_property parent.project_path F:/vivado_project/M3_t/M3_test/M3_test.xpr [current_project]
-  set_property ip_repo_paths F:/vivado_project/AT426-r0p1-00rel0-1/AT426-BU-98000-r0p1-00rel0/vivado/Arm_ipi_repository [current_project]
+  set_property ip_repo_paths {
+  F:/vivado_project/AT426-r0p1-00rel0-1/AT426-BU-98000-r0p1-00rel0/vivado/Arm_ipi_repository
+  F:/vivado_project/M3_t/xilinx_com_hls_skin_process_accel_1_0
+} [current_project]
   update_ip_catalog
   set_property ip_output_repo F:/vivado_project/M3_t/M3_test/M3_test.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]

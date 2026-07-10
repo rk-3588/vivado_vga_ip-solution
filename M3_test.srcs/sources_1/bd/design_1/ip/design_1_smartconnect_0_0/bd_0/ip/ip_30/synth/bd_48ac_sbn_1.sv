@@ -52,8 +52,8 @@
 
 (* X_CORE_INFO = "sc_node_v1_0_10_top,Vivado 2019.2" *)
 (* CHECK_LICENSE_TYPE = "bd_48ac_sbn_1,sc_node_v1_0_10_top,{}" *)
-(* CORE_GENERATION_INFO = "bd_48ac_sbn_1,sc_node_v1_0_10_top,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_node,x_ipVersion=1.0,x_ipCoreRevision=10,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_FIFO_IP=0,C_DISABLE_IP=0,C_FIFO_SIZE=5,C_FIFO_TYPE=0,C_FIFO_OUTPUT_REG=1,C_ENABLE_PIPELINING=0x01,C_SYNCHRONIZATION_STAGES=3,C_NUM_SI=1,C_NUM_MI=1,C_CHANNEL=4,C_PAYLD_WIDTH=8,C_S_NUM_BYTES_ARRAY=0x00000010,C_M_NUM_BYTES_ARRAY=0x00000010,C_USER_BITS_PER_BYTE=0,C_ARBITER_MODE=1,C_SC_ROUTE_\
-WIDTH=3,C_ID_WIDTH=2,C_ADDR_WIDTH=32,C_USER_WIDTH=0,C_MAX_PAYLD_BYTES=16,C_S_PIPELINE=0,C_M_PIPELINE=0,C_M_SEND_PIPELINE=0,C_S_LATENCY=1,C_NUM_OUTSTANDING=2,C_ACLK_RELATIONSHIP=0,C_ACLKEN_CONVERSION=0}" *)
+(* CORE_GENERATION_INFO = "bd_48ac_sbn_1,sc_node_v1_0_10_top,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_node,x_ipVersion=1.0,x_ipCoreRevision=10,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_FIFO_IP=0,C_DISABLE_IP=0,C_FIFO_SIZE=5,C_FIFO_TYPE=0,C_FIFO_OUTPUT_REG=1,C_ENABLE_PIPELINING=0x01,C_SYNCHRONIZATION_STAGES=3,C_NUM_SI=1,C_NUM_MI=1,C_CHANNEL=4,C_PAYLD_WIDTH=9,C_S_NUM_BYTES_ARRAY=0x00000010,C_M_NUM_BYTES_ARRAY=0x00000010,C_USER_BITS_PER_BYTE=0,C_ARBITER_MODE=1,C_SC_ROUTE_\
+WIDTH=4,C_ID_WIDTH=2,C_ADDR_WIDTH=32,C_USER_WIDTH=0,C_MAX_PAYLD_BYTES=16,C_S_PIPELINE=0,C_M_PIPELINE=0,C_M_SEND_PIPELINE=0,C_S_LATENCY=1,C_NUM_OUTSTANDING=2,C_ACLK_RELATIONSHIP=0,C_ACLKEN_CONVERSION=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bd_48ac_sbn_1 (
   s_sc_aclk,
@@ -87,7 +87,7 @@ input wire [0 : 0] s_sc_send;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC RECV" *)
 output wire [0 : 0] s_sc_recv;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC PAYLD" *)
-input wire [7 : 0] s_sc_payld;
+input wire [8 : 0] s_sc_payld;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_sc_aclk, ASSOCIATED_BUSIF M_SC, ASSOCIATED_RESET m_sc_aresetn, ASSOCIATED_CLKEN m_sc_aclken, FREQ_HZ 40000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_sc_aclk CLK" *)
 input wire m_sc_aclk;
@@ -103,7 +103,7 @@ output wire [0 : 0] m_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC INFO" *)
 output wire [0 : 0] m_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC PAYLD" *)
-output wire [7 : 0] m_sc_payld;
+output wire [8 : 0] m_sc_payld;
 
   sc_node_v1_0_10_top #(
     .C_FAMILY("artix7"),
@@ -117,12 +117,12 @@ output wire [7 : 0] m_sc_payld;
     .C_NUM_SI(1),
     .C_NUM_MI(1),
     .C_CHANNEL(4),
-    .C_PAYLD_WIDTH(8),
+    .C_PAYLD_WIDTH(9),
     .C_S_NUM_BYTES_ARRAY(32'H00000010),
     .C_M_NUM_BYTES_ARRAY(32'H00000010),
     .C_USER_BITS_PER_BYTE(0),
     .C_ARBITER_MODE(1),
-    .C_SC_ROUTE_WIDTH(3),
+    .C_SC_ROUTE_WIDTH(4),
     .C_ID_WIDTH(2),
     .C_ADDR_WIDTH(32),
     .C_USER_WIDTH(0),
