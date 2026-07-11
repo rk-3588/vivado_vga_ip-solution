@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -73,7 +72,7 @@ set rc [catch {
   set_property webtalk.parent_dir F:/vivado_project/M3_t/M3_test/M3_test.cache/wt [current_project]
   set_property parent.project_path F:/vivado_project/M3_t/M3_test/M3_test.xpr [current_project]
   set_property ip_repo_paths {
-  F:/vivado_project/AT426-r0p1-00rel0-1/AT426-BU-98000-r0p1-00rel0/vivado/Arm_ipi_repository
+  f:/vivado_project/AT426-r0p1-00rel0-1/AT426-BU-98000-r0p1-00rel0/vivado/Arm_ipi_repository
   F:/vivado_project/M3_t/xilinx_com_hls_skin_process_accel_1_0
 } [current_project]
   update_ip_catalog

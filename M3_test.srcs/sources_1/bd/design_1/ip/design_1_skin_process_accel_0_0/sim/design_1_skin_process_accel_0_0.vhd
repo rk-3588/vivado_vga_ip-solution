@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:skin_process_accel:1.0
--- IP Revision: 2107091818
+-- IP Revision: 2007101958
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

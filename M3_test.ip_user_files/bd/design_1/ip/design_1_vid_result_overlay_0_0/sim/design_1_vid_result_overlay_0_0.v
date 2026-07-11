@@ -59,6 +59,7 @@ module design_1_vid_result_overlay_0_0 (
   rstn,
   result,
   result_valid,
+  app_mode,
   roi_min,
   roi_max,
   s_active_video,
@@ -85,6 +86,7 @@ input wire vid_clk;
 input wire rstn;
 input wire [3 : 0] result;
 input wire result_valid;
+input wire [1 : 0] app_mode;
 input wire [31 : 0] roi_min;
 input wire [31 : 0] roi_max;
 (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_in ACTIVE_VIDEO" *)
@@ -125,6 +127,7 @@ output wire m_vsync;
     .rstn(rstn),
     .result(result),
     .result_valid(result_valid),
+    .app_mode(app_mode),
     .roi_min(roi_min),
     .roi_max(roi_max),
     .s_active_video(s_active_video),

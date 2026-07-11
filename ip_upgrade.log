@@ -1,6 +1,27 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Sat Jul 11 13:21:50 2026
+| Host         : LAPTOP-A50L20VJ running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_skin_process_accel_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_skin_process_accel_0_0 (xilinx.com:hls:skin_process_accel:1.0) from (Rev. 2107091818) to (Rev. 2007101958)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 | Date         : Thu Jul  9 20:43:42 2026
 | Host         : LAPTOP-A50L20VJ running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

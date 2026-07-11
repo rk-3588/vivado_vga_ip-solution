@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:skin_process_accel:1.0
-// IP Revision: 2107091818
+// IP Revision: 2007101958
 
 (* X_CORE_INFO = "skin_process_accel,Vivado 2019.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_skin_process_accel_0_0,skin_process_accel,{}" *)
-(* CORE_GENERATION_INFO = "design_1_skin_process_accel_0_0,skin_process_accel,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=skin_process_accel,x_ipVersion=1.0,x_ipCoreRevision=2107091818,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CTRL_ADDR_WIDTH=13,C_S_AXI_CTRL_DATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "design_1_skin_process_accel_0_0,skin_process_accel,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=skin_process_accel,x_ipVersion=1.0,x_ipCoreRevision=2007101958,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CTRL_ADDR_WIDTH=13,C_S_AXI_CTRL_DATA_WIDTH=32}" *)
 (* IP_DEFINITION_SOURCE = "HLS" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_skin_process_accel_0_0 (

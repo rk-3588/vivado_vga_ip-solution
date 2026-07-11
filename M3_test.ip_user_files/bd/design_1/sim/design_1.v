@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-//Date        : Thu Jul  9 20:45:27 2026
+//Date        : Sat Jul 11 13:23:28 2026
 //Host        : LAPTOP-A50L20VJ running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -146,6 +146,7 @@ module design_1
   wire axi_clock_converter_0_M_AXI_WVALID;
   wire [1:0]axi_gpio_0_GPIO_TRI_O;
   wire [1:0]axi_gpio_1_GPIO_TRI_O;
+  wire [1:0]axi_gpio_2_gpio2_io_o;
   wire [3:0]axi_gpio_2_gpio_io_o;
   wire [31:0]axi_gpio_3_gpio_io_o;
   wire [31:0]axi_gpio_4_gpio_io_o;
@@ -683,7 +684,8 @@ module design_1
         .s_axi_wstrb(axi_interconnect_0_M05_AXI_WSTRB),
         .s_axi_wvalid(axi_interconnect_0_M05_AXI_WVALID));
   design_1_axi_gpio_2_0 axi_gpio_2
-       (.gpio_io_o(axi_gpio_2_gpio_io_o),
+       (.gpio2_io_o(axi_gpio_2_gpio2_io_o),
+        .gpio_io_o(axi_gpio_2_gpio_io_o),
         .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_araddr(axi_interconnect_0_M08_AXI_ARADDR[8:0]),
         .s_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),
@@ -1453,7 +1455,8 @@ module design_1
         .vblank_out(v_tc_0_vtiming_out_VBLANK),
         .vsync_out(v_tc_0_vtiming_out_VSYNC));
   design_1_vid_result_overlay_0_0 vid_result_overlay_0
-       (.m_active_video(vid_result_overlay_0_vid_io_out_ACTIVE_VIDEO),
+       (.app_mode(axi_gpio_2_gpio2_io_o),
+        .m_active_video(vid_result_overlay_0_vid_io_out_ACTIVE_VIDEO),
         .m_data(vid_result_overlay_0_vid_io_out_DATA),
         .m_field(vid_result_overlay_0_vid_io_out_FIELD),
         .m_hblank(vid_result_overlay_0_vid_io_out_HBLANK),
